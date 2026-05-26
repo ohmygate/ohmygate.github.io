@@ -504,6 +504,10 @@ func getProviderOptions(model Model, providerCfg config.ProviderConfig) fantasy.
 			if model.CatwalkCfg.CanReason {
 				extraBody["enable_thinking"] = model.ModelCfg.Think
 			}
+		case string(catwalk.InferenceProviderGateRouter):
+			if model.CatwalkCfg.CanReason {
+				extraBody["enable_thinking"] = model.ModelCfg.Think
+			}
 		}
 
 		mergedOptions["extra_body"] = extraBody
